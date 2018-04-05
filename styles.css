@@ -1,0 +1,11 @@
+body{
+    /*background-color : rgb(197, 194, 165);*/
+    background : linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+    background : -moz-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+    background : -webkit-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+    background: -o-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+    background: -ms-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+
+
+
+}
