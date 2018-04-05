@@ -1,13 +1,16 @@
 body{
     /*background-color : rgb(197, 194, 165);*/
-    background : linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+    /*background : linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
     background : -moz-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
     background : -webkit-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
     background: -o-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
     background: -ms-linear-gradient(rgb(214, 206, 195), rgb(228, 221, 202)) fixed;
+    */
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
-#imageholder{
-    background-image: url("icon.png");
+img{
+    /* background-image: url("icon.png");*/
     width: 140px;
     height: 140px;
     border-radius: 70px;
@@ -18,5 +21,54 @@ body{
     text-align: center;
     text-align: -moz-center;
     text-align: -webkit-center;
-    margin-top: 50px;
+    margin-top: 100px;
+}
+div {
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+}
+.name{
+    margin-top: 10px;
+    font-weight: 300;
+}
+#roles{
+    font-weight: 100;
+}
+.leftquestion{
+    font-weight: 900;
+    margin-left: 10%;
+    width: 50%;
+}
+.leftresponse{
+    margin-left: 10%;
+    width: 50%;
+}
+.rightquestion{
+    font-weight: 900;
+    margin-right: 10%;
+    margin-left:40%;
+    text-align: right;
+}
+.rightresponse{
+    margin-right:10%;
+    margin-left:40%;
+    text-align: right;
+    width: 50%;
+}
+::selection{
+    background: rgba(212, 212, 212, 1);
+}
+
+::-moz-selection{
+    background: rgba(0,0, 0, 0.5);
+}
+mark{
+    background-color: rgb(212,212,212);
+}
+a{
+    color: darkslategray;
+}
+a:hover{
+    color: dimgray;
 }
