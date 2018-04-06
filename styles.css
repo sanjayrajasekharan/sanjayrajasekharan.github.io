@@ -70,12 +70,15 @@ p{
     font-size:120%;
 }
 footer{
-    background-color: rgb(212,212,212);
+    background-color: rgba(0,0,0,0.17);
     text-align: center;
     text-align: -moz-center;
     text-align: -webkit-center;
-    vertical-align:bottom;
+    bottom:0;
     padding:5px;
+    position: fixed;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 #inlogo{
     width: 28px;
