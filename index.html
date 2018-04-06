@@ -2,7 +2,7 @@
 <html>
 <head>
     <!--favicon-->
-    <link rel="icon" type="image/png" href="s-1500.png">
+    <link rel="icon" type="image/png" href="media/GrayRounded3.png">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,900" rel="stylesheet">
@@ -10,12 +10,14 @@
     <meta charset = "utf-8">
     <meta name = "author" content = "Sanjay Rajasekharan">
     <!--scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <script>
         $(document).ready(function() {
-            $("#me").hover(function () {
-                $("me").attr("src", "s-1500.png");
-                console.log("here");
+            $("#me").mouseenter(function(){
+                $(this).attr('src', 'media/GrayRounded3.png');
+            });
+            $("#me").mouseleave(function(){
+                $(this).attr('src','media/icon.png');
             });
         });
     </script>
@@ -24,7 +26,7 @@
 <body>
 <div id = "center">
     <div id = "image_holder">
-    <img src = "GrayRounded3.png" id = "me">
+    <img src = "media/icon.png" id = "me">
     </div>
 </div>
 <div class = "name">Sanjay Rajasekharan</div>
@@ -50,9 +52,9 @@
 <br>
 <br>
 <footer>
-    <a href = "https://www.linkedin.com/in/sanjayrajasekharan/" target = "_blank"><img src = "In-Black-59px-R.png" id = "inlogo" class = "logo"></a>
-    <a href = "https://github.com/sanjayrajasekharan" target = "_blank"><img src = "GitHub-Mark-64px.png" id = "gitlogo" class = "logo"></a>
-    <a href = "mailto:sanjay.rajasekharan@gmail.com" target = "_blank"><img src = "mail.png" id = "maillogo" class = "logo"></a>
+    <a href = "https://www.linkedin.com/in/sanjayrajasekharan/" target = "_blank"><img src = "media/In-Black-59px-R.png" id = "inlogo" class = "logo"></a>
+    <a href = "https://github.com/sanjayrajasekharan" target = "_blank"><img src = "media/GitHub-Mark-64px.png" id = "gitlogo" class = "logo"></a>
+    <a href = "mailto:sanjay.rajasekharan@gmail.com" target = "_blank"><img src = "media/mail.png" id = "maillogo" class = "logo"></a>
 </footer>
 </body>
 </html>

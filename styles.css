@@ -15,6 +15,7 @@ body{
     width:200px;
     height: 200px;
     border-radius: 100%;
+    display: inline;
 }
 #center{
     text-align: center;
@@ -36,9 +37,11 @@ div {
 }
 #roles{
     font-weight: 100;
+    color: rgb(112,128,143);
 }
 h1{
     font-weight: 900;
+    color: slategrey;
 }
 .leftquestion{
     margin-left: 10%;
@@ -66,7 +69,8 @@ h1{
 }
 
 mark{
-    background-color: rgb(212,212,212);
+    background-color:rgba(0,0,0,0);
+    color: rgb(112,128,143);
 }
 a{
     color: darkslategray;
@@ -78,7 +82,7 @@ p{
     font-size:120%;
 }
 footer{
-    background-color: rgb(212,212,212);
+    background-color: rgba(112,128,143,0.3);
     text-align: center;
     text-align: -moz-center;
     text-align: -webkit-center;
