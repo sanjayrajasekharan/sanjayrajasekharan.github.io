@@ -79,6 +79,7 @@ footer{
     position: fixed;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
+    display: inline;
 }
 #inlogo{
     width: 28px;
