@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    height: 100%;
     font-family: 'Roboto', sans-serif;
 }
 #me{
@@ -73,7 +74,7 @@ footer{
     text-align: center;
     text-align: -moz-center;
     text-align: -webkit-center;
-    float:bottom;
+    vertical-align:bottom;
     padding:5px;
 }
 #inlogo{
