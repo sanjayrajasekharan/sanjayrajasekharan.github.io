@@ -2,21 +2,32 @@
 <html>
 <head>
     <!--favicon-->
-    <link rel="icon" type="image/png" href="icon.png">
-
+    <link rel="icon" type="image/png" href="s-1500.png">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,900" rel="stylesheet">
     <!--meta data-->
     <meta charset = "utf-8">
     <meta name = "author" content = "Sanjay Rajasekharan">
+    <!--scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#me").hover(function () {
+                $("me").attr("src", "s-1500.png");
+                console.log("here");
+            });
+        });
+    </script>
 </head>
-<title>
-    Sanjay Rajasekharan
-</title>
+<title>Sanjay Rajasekharan</title>
 <body>
 <div id = "center">
-    <img src = "icon.png" id = "me">
+    <div id = "image_holder">
+    <img src = "GrayRounded3.png" id = "me">
+    </div>
 </div>
 <div class = "name">Sanjay Rajasekharan</div>
 <div class = "name" id = "roles">Student &middot Coder &middot Engineer</div>
@@ -28,7 +39,7 @@
 </p>
 <h1 class = "rightquestion"><mark>What do I do?</mark></h1>
 <p class = "rightresponse">
-    I enjoy programming, competing with <a href = "https://www.robotics.harker.org" target = "_blank">Team 1072</a>
+    I enjoy programming, competing with <a href = "https://robotics.harker.org" target = "_blank">Team 1072</a>
     in the annual First Robotics Competition, and most of all spending time with my family.
 </p>
 <h1 class = "leftquestion"><mark>What am I working on?</mark></h1>
@@ -38,6 +49,8 @@
     They will upload basic information to a server and it can be decoded into a level on another players computer. The game is still in the works; don't expect too much.
     But you can find the repo <a href = "https://www.github.com/sanjayrajasekharan/OpenGLModularGame" target = "_blank">here</a>.
 </p>
+<br>
+<br>
 <footer>
     <a href = "https://www.linkedin.com/in/sanjayrajasekharan/" target = "_blank"><img src = "In-Black-59px-R.png" id = "inlogo" class = "logo"></a>
     <a href = "https://github.com/sanjayrajasekharan" target = "_blank"><img src = "GitHub-Mark-64px.png" id = "gitlogo" class = "logo"></a>

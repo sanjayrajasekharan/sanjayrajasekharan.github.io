@@ -3,17 +3,24 @@ body{
     height: 100%;
     font-family: 'Roboto', sans-serif;
 }
-#me{
+#image_holder {
     width: 200px;
     height: 200px;
     border-radius: 100%;
     background-repeat: no-repeat;
     background-position: center center;
+    background-size: 100%;
+}
+#me{
+    width:200px;
+    height: 200px;
+    border-radius: 100%;
 }
 #center{
     text-align: center;
     text-align: -moz-center;
     text-align: -webkit-center;
+    vertical-align: center;
     margin-top: 100px;
 }
 div {
@@ -25,6 +32,7 @@ div {
     margin-top: 10px;
     font-weight: 300;
     font-size: 1.5em;
+    vertical-align: middle;
 }
 #roles{
     font-weight: 100;
@@ -70,7 +78,7 @@ p{
     font-size:120%;
 }
 footer{
-    background-color: rgba(0,0,0,0.17);
+    background-color: rgb(212,212,212);
     text-align: center;
     text-align: -moz-center;
     text-align: -webkit-center;
@@ -79,7 +87,7 @@ footer{
     position: fixed;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
-    display: inline;
+    width: 100%;
 }
 #inlogo{
     width: 28px;
@@ -98,4 +106,9 @@ footer{
 }
 .logo:hover{
     opacity: 0.75;
+}
+#s{
+    width: 60px;
+    height: 100px;
+
 }
