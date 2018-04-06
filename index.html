@@ -5,7 +5,36 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     <meta charset = "utf-8">
-    <script></script>
+    <script>
+        var gitChanged;
+        var inChanged;
+        function changeGitLogo() {
+            if(!gitChanged) {
+                document.getElementById("gitlogo").src = "Octocat.png";
+                document.getElementById("gitlogo").style.width = "24px";
+                document.getElementById("gitlogo").style.height = "19.95px";
+                gitChanged = true;
+            }
+            else {
+                document.getElementById("gitlogo").src = "GitHub-Mark-64px.png";
+                document.getElementById("gitlogo").style.width = "24px";
+                document.getElementById("gitlogo").style.height = "24px";
+                gitChanged = false;
+            }
+        }
+        function changeInLogo() {
+            console.log("here");
+            if(!inChanged) {
+                document.getElementById("inlogo").src = "In-2C-59px-R.png";
+                inChanged = true;
+            }
+            else {
+                document.getElementById("inlogo").src = "In-Black-59px-R.png";
+                inChanged = false;
+            }
+
+        }
+    </script>
 </head>
 <title>
     Sanjay Rajasekharan
@@ -13,23 +42,32 @@
 <body>
 <div id = "center">
     <!--<div id = "imageholder"></div>-->
-    <img src = "icon.png">
+    <img src = "icon.png" id = "me">
 </div>
 <div class = "name">Sanjay Rajasekharan</div>
 <div class = "name" id = "roles">Student &middot Coder &middot Engineer</div>
-
 <h1 class = "leftquestion"><mark>Who am I?</mark></h1>
 <p class = "leftresponse">
     I am a student at
     <a href = "https://www.harker.org" target = "_blank">The Harker School</a>
     in San Jose, CA.
 </p>
-
 <h1 class = "rightquestion"><mark>What do I do?</mark></h1>
 <p class = "rightresponse">
     I enjoy programming, competing with <a href = "https://www.robotics.harker.org" target = "_blank">Team 1072</a>
     in the annual First Robotics Competition, and most of all spending time with my family.
 </p>
-
+<h1 class = "leftquestion"><mark>What am I working on?</mark></h1>
+<p class = "leftresponse">
+    I am currently working on a game! It's a project for my computer science class, and I am trying to build a custom game engine with OpenGL.
+    I want to make the game as modular as possible so that it can serve many roles whether an educational or as just a fun maze game. The ultimate goal is to use MongoDB so that users can upload their levels of the games.
+    They will upload basic information to a server and it can be decoded into a level on another players computer. The game is still in the works; don't expect too much.
+    But you can find the repo <a href = "https://www.github.com/sanjayrajasekharan/OpenGLModularGame" target = "_blank">here</a>.
+</p>
+<footer>
+    <a href = "https://www.linkedin.com/in/sanjayrajasekharan/" target = "_blank"><img src = "In-Black-59px-R.png" id = "inlogo" class = "logo"></a>
+    <a href = "https://github.com/sanjayrajasekharan" target = "_blank"><img src = "GitHub-Mark-64px.png" id = "gitlogo" class = "logo"></a>
+    <a href = "mailto:sanjay.rajasekharan@gmail.com" target = "_blank"><img src = "mail.png" id = "maillogo" class = "logo"></a>
+</footer>
 </body>
 </html>

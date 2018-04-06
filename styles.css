@@ -9,11 +9,11 @@ body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
-img{
+#me{
     /* background-image: url("icon.png");*/
-    width: 140px;
-    height: 140px;
-    border-radius: 70px;
+    width: 10%;
+    height: 10%;
+    border-radius: 100%;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -31,38 +31,39 @@ div {
 .name{
     margin-top: 10px;
     font-weight: 300;
+    font-size: 1.5em;
 }
 #roles{
     font-weight: 100;
 }
-.leftquestion{
+h1{
     font-weight: 900;
+}
+.leftquestion{
     margin-left: 10%;
-    width: 50%;
+    margin-right:50%;
+    width: 40%;
+    text-align: left;
 }
 .leftresponse{
     margin-left: 10%;
-    width: 50%;
+    margin-right:50%;
+    width: 40%;
+    text-align: left;
 }
 .rightquestion{
-    font-weight: 900;
     margin-right: 10%;
-    margin-left:40%;
+    margin-left:50%;
+    width:40%;
     text-align: right;
 }
 .rightresponse{
     margin-right:10%;
-    margin-left:40%;
+    margin-left:50%;
+    width:40%;
     text-align: right;
-    width: 50%;
-}
-::selection{
-    background: rgba(212, 212, 212, 1);
 }
 
-::-moz-selection{
-    background: rgba(0,0, 0, 0.5);
-}
 mark{
     background-color: rgb(212,212,212);
 }
@@ -71,4 +72,34 @@ a{
 }
 a:hover{
     color: dimgray;
+}
+p{
+    font-size:120%;
+}
+footer{
+    background-color: rgb(212,212,212);
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    padding:0;
+    float:bottom;
+    padding:5px;
+}
+#inlogo{
+    width: 28px;
+    height: 24px;
+    vertical-align: middle;
+}
+#gitlogo {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+#maillogo {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+.logo:hover{
+    opacity: 0.75;
 }
