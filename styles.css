@@ -87,9 +87,11 @@ footer{
     text-align: -moz-center;
     text-align: -webkit-center;
     bottom:0;
-    position: fixed;
-    padding:5px;
+    padding-top:5px;
+    padding-bottom:5px;
     width: 100%;
+    max-height: 28px;
+    min-height: 28px;
 }
 #inlogo{
     width: 28px;
