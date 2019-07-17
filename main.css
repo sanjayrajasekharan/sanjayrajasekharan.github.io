@@ -28,7 +28,8 @@ html{
     margin: 0;
  }
  .linear-wipe {    
-    background: linear-gradient(to right, goldenrod 20%, #ffe180 40%, #ffe180 60%, goldenrod 80%);
+    /* background: linear-gradient(to right, goldenrod 20%, #ffe180 40%, #ffe180 60%, goldenrod 80%); */
+    background: linear-gradient(to right, goldenrod 20%, #ffe180 60%, goldenrod 80%);
     background-size: 200% auto;
     
     color: #000;
