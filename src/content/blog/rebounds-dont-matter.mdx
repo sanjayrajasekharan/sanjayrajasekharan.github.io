@@ -1,0 +1,103 @@
+---
+title: "Rebounds Don't Matter"
+description: "A Bayesian model shows that the player who grabs the rebound isn't necessarily the one who earned it — and traditional rebounding stats are worse at predicting outcomes than you'd think."
+date: 2026-04-28
+tags: ["basketball", "bayesian-modeling", "nba"]
+draft: true
+---
+
+import Card from "../../components/Card.astro";
+import Figure from "../../components/Figure.astro";
+import MetricGrid from "../../components/MetricGrid.astro";
+
+Every missed shot creates a possession battle. The defense wins about 69% of the
+time — that's the baseline. An offensive rebound is an *extra possession* that
+shouldn't have existed. But who deserves credit for that outcome?
+
+Traditional basketball analytics answers simply: whoever grabbed the ball. A
+player's defensive rebound percentage (DRB%) or offensive rebound percentage
+(ORB%) is their "rebounding value." Simple, measurable, wrong.
+
+## The problem with counting rebounds
+
+Rebounds are a **team outcome** masquerading as an individual statistic. When
+Rudy Gobert boxes out two opponents and the ball bounces to Mike Conley, Conley's
+DRB% goes up. Gobert's doesn't. The box score credits the collector, not the
+contributor.
+
+This isn't a new observation — basketball people have known this for years. But
+the usual response is hand-waving: "yeah, rebounds are noisy." We wanted to
+quantify *how* noisy, and build something better.
+
+## A possession-level model
+
+We built a hierarchical Bayesian model that estimates each player's causal
+impact on possession-level rebound outcomes. For every rebound opportunity in the
+2025–26 NBA season (115,931 possessions across 1,230 games), we observe:
+
+- The 5 defenders and 5 offensive players on the floor
+- The shot type and distance
+- Whether the defense or offense got the rebound
+
+The model decomposes each player's effect into two latent factors — a shared
+rebounding ability and a differential that captures whether a player is
+relatively better on offense or defense. The key insight: credit is assigned
+based on **who was on the floor**, not who caught the ball.
+
+{/* TODO: Add model equation and DAG visualization */}
+
+## Does it actually work?
+
+We tested this directly. Four models, same logistic structure, same features —
+the only difference is how they assign credit to players:
+
+| Model | Player effect | What it represents |
+|-------|--------------|-------------------|
+| **Null** | None | Shot context only |
+| **Traditional** | DRB% / ORB% | Personal collection rates |
+| **Height-only** | Height z-score | Physical attributes |
+| **Possession Impact** | Latent r + d | Bayesian — isolates individual from lineup |
+
+Five-fold cross-validation by games. The traditional model recomputes rates from
+training data only — no peeking.
+
+{/* TODO: Add comparison results plots */}
+
+<Card>
+  <strong>The model outperforms every baseline on every fold.</strong> The
+  held-out log-loss improvement over the traditional model is consistent across
+  all 5 folds, confirming that the player-level decomposition assigns credit
+  more accurately than personal rebound rates.
+</Card>
+
+## What this means
+
+The magnitude is modest — shot context (type, distance) dominates any individual
+player's effect. That's actually the point: **rebounding impact is a low-value
+skill that traditional stats dramatically overvalue.**
+
+When a team pays a premium for a "great rebounder," they're often paying for a
+player who happens to be in the right place when uncontested rebounds fall. The
+model suggests that the real value comes from players who shift the *probability*
+of their team winning possession battles — regardless of who ultimately grabs
+the ball.
+
+{/* TODO: Add player-level results and interesting findings */}
+
+## The possession framing
+
+We call the individual metrics **Defensive Possession Impact (DPI)** and
+**Offensive Possession Impact (OPI)**. The framing is deliberate:
+
+- A defensive rebound is the *expected* outcome (69% baseline). It's worth 0
+  extra possessions — it's what should happen.
+- An offensive rebound steals an extra possession from the defense.
+- DPI measures how much you *prevent* extra possessions leaking to the opponent.
+- OPI measures how much you *create* extra possessions for your team.
+
+Forget about rebounds. Only possessions matter.
+
+---
+
+*Model code and data available at
+[github.com/sanjayrajasekharan/brim](https://github.com/sanjayrajasekharan/brim).*

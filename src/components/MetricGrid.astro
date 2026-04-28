@@ -1,0 +1,35 @@
+---
+/**
+ * Responsive grid of metric boxes.
+ *
+ * Usage:
+ *   <MetricGrid
+ *     items={[
+ *       { value: "0.00637", label: "Δ log-loss vs traditional", color: "var(--blue-dk)" },
+ *       { value: "5 / 5",   label: "Folds won", color: "var(--green-dk)" },
+ *     ]}
+ *   />
+ */
+interface Metric {
+  value: string;
+  label: string;
+  color?: string;
+}
+
+interface Props {
+  items: Metric[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="metric-grid">
+  {items.map((m) => (
+    <div class="metric-box">
+      <div class="value" style={m.color ? `color: ${m.color}` : ""}>
+        {m.value}
+      </div>
+      <div class="label">{m.label}</div>
+    </div>
+  ))}
+</div>

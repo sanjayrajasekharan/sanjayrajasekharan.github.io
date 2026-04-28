@@ -1,0 +1,21 @@
+---
+/**
+ * Figure with auto-styled image and caption.
+ *
+ * Usage:
+ *   <Figure src="/plots/compare_bars.png" alt="Bar chart" caption="Model comparison." />
+ */
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: string;
+}
+
+const { src, alt, caption, width = "100%" } = Astro.props;
+---
+
+<figure>
+  <img src={src} alt={alt} style={`width: ${width}; max-width: 100%;`} loading="lazy" />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

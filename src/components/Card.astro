@@ -1,0 +1,20 @@
+---
+/**
+ * Accent-bordered callout card.
+ *
+ * Usage:
+ *   <Card>Default blue accent</Card>
+ *   <Card color="green">Green accent</Card>
+ *   <Card color="orange">Orange accent</Card>
+ */
+interface Props {
+  color?: "blue" | "green" | "orange" | "red";
+}
+
+const { color = "blue" } = Astro.props;
+const modifier = color === "blue" ? "" : `card--${color}`;
+---
+
+<div class:list={["card", modifier]}>
+  <slot />
+</div>
