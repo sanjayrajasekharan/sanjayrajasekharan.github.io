@@ -5,24 +5,19 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection("blog"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const preview = posts.slice(0, 3);
+const hasMore = posts.length > 3;
 ---
 
 <Base title="Sanjay Rajasekharan">
   <section>
-    <h1>Hi, I'm Sanjay.</h1>
-    <p class="subtitle">
-      I build Bayesian models, write about basketball analytics,
-      and care about doing statistics honestly.
-    </p>
-  </section>
-
-  <section>
-    <h2>Recent writing</h2>
-    {posts.length === 0 ? (
+    <h2><a href="/blog/">Blog</a></h2>
+    {preview.length === 0 ? (
       <p class="text-muted">Coming soon.</p>
     ) : (
       <ul class="post-list">
-        {posts.map((post) => (
+        {preview.map((post) => (
           <li class="post-list__item">
             <div class="post-list__meta">
               <time datetime={post.data.date.toISOString()}>
@@ -41,5 +36,18 @@ const posts = (await getCollection("blog"))
         ))}
       </ul>
     )}
+    {hasMore && (
+      <a href="/blog" class="more-link">More &rarr;</a>
+    )}
+  </section>
+
+  <section class="projects-strip">
+    <h2><a href="/projects/">Projects</a></h2>
+    <ul class="projects-strip__list">
+      <li>
+        <a href="https://github.com/sanjayrajasekharan/brim" target="_blank">Possession Impact Model</a>
+        <span class="text-muted">&mdash; Bayesian credit assignment for NBA rebounds</span>
+      </li>
+    </ul>
   </section>
 </Base>

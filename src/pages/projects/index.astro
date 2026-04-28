@@ -1,0 +1,25 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const projects = [
+  {
+    name: "Possession Impact Model",
+    href: "https://github.com/sanjayrajasekharan/brim",
+    desc: "Bayesian credit assignment for NBA rebounds",
+  },
+];
+---
+
+<Base title="Projects — Sanjay Rajasekharan">
+  <section>
+    <h2>Projects</h2>
+    <ul class="projects-strip__list">
+      {projects.map((p) => (
+        <li>
+          <a href={p.href} target="_blank">{p.name}</a>
+          <span class="text-muted">&mdash; {p.desc}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
